@@ -1,0 +1,9 @@
+gulp:
+  restart: always
+  container_name: "gulp"
+  image: jonthdiaz/node:latest
+  ports:
+    -   "35729:35729"
+    -   "3000:3000"
+  volumes:
+  - ../:/app

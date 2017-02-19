@@ -1,0 +1,79 @@
+<section class="container wm-t-50">
+  
+  <button type="button" name="button" class="btn waves-effect waves-light"
+  (click)=activeForm()>
+    Nuevo usuario
+  </button>
+  <form class="" (ngSubmit)="registerForm.valid && submit($event)" [formGroup]="registerForm" *ngIf="showform">
+    <div class="row">
+      <div class="col s6 fnone-imp wm-center">
+        <div class="col s6">
+          <p class="blue-text">Nombre</p>
+          <input type="text" name="" value="" placeholder="Nombre"
+          formControlName="name">
+          <span class="red-text"
+          *ngIf="registerForm.controls.name.errors
+          && registerForm.controls.name.dirty">Este campo es requerido!</span>
+        </div>
+        <div class="col s6">
+          <p class="blue-text">Apellido</p>
+          <input type="text" name="" value="" placeholder="Nombre"
+          formControlName="lastname">
+          <span class="red-text"
+          *ngIf="registerForm.controls.lastname.errors
+          && registerForm.controls.lastname.dirty">Este campo es requerido!</span>
+        </div>
+        <div class="col s6">
+          <p class="blue-text">username</p>
+          <input type="text" name="" value="" placeholder="Nombre"
+          formControlName="username">
+          <span class="red-text"
+          *ngIf="registerForm.controls.username.errors
+          && registerForm.controls.username.dirty">Este campo es requerido!</span>
+        </div>
+        <div class="col s6">
+          <p class="blue-text">password</p>
+          <input type="password" name="" value="" placeholder="Nombre"
+          formControlName="password">
+          <span class="red-text"
+          *ngIf="registerForm.controls.password.errors
+          && registerForm.controls.password.dirty">Este campo es requerido!</span>
+        </div>
+        <div class="col s12 right-align">
+          <button type="submit" name="button" class="btn waves-effect waves-light"
+          [disabled]="!registerForm.valid">
+            Registrar
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+  <section *ngIf="!showform">
+    <div class="row wm-t-30">
+      <div class="col s4 wm-0">
+        <span class="orange-text">Nombre</span>
+      </div>
+      <div class="col s4 wm-0">
+        <span class="orange-text">Apellido</span>
+      </div>
+      <div class="col s4 wm-0">
+        <span class="orange-text">Username</span>
+      </div>
+    </div>
+    <div class="" *ngFor="let user of listusers">
+
+      <div class="row">
+        <div class="col s4 wm-0">
+          <p class="black-text wm-0">{{user.name}}</p>
+        </div>
+        <div class="col s4 wm-0">
+          <p class="black-text wm-0">{{user.lastname}}</p>
+        </div>
+        <div class="col s4 wm-0">
+          <p class="black-text wm-0">{{user.username}}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</section>

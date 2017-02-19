@@ -1,0 +1,62 @@
+.wm
+  &-center
+    margin: 0 auto
+  &-t
+    @for $i from 0 through 100
+      &-#{$i}
+        margin-top: 0px + $i
+      &-imp-#{$i}
+        margin-top: 0px + $i !important
+  @media (max-width: 760px)
+    &-xs
+      &-t
+        @for $i from 0 through 100
+          &-#{$i}
+            margin-top: 0px + $i
+          &-imp-#{$i}
+            margin-top: 0px + $i !important
+  &-b
+    @for $i from 0 through 100
+      &-#{$i}
+        margin-top: 0px + $i
+      &-imp-#{$i}
+        margin-top: 0px + $i !important
+  &-r
+    @for $i from 0 through 100
+      &-#{$i}
+        margin-right: 0px + $i
+      &-imp-#{$i}
+        margin-right: 0px + $i !important
+  @for $i from 0 through 100
+    &-#{$i}
+      margin: 0px + $i
+.wp
+  @for $i from 0 through 100
+    &-#{$i}
+      padding: $i + rem
+  @for $i from 0 through 100
+    &-px-#{$i}
+      padding: 0px + $i
+  @for $i from 0 through 100
+    &-t-#{$i}
+      padding-top: 0px + $i
+    &-t-imp-#{$i}
+      padding-top: 0px + $i !important
+    &-r-#{$i}
+      padding-right: 0px + $i
+    &-b-#{$i}
+      padding-bottom: 0px + $i
+    &-l-#{$i}
+      padding-left: 0px + $i
+
+.pr
+  @for $i from 0 through 100
+    @for $j from 0 through 100
+      &-#{$i}-#{$j}
+        padding: $i+rem $j+rem
+
+
+.fnone
+  float: none
+  &-imp
+    float: none !important

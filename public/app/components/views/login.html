@@ -1,0 +1,28 @@
+<section class="container wm-t-100">
+  <div class="row">
+    <form (ngSubmit)="registerForm.valid && submit($event)"  [formGroup]="registerForm">
+    <div class="col s12 m6 wm-center fnone-imp">
+      <div class="col s12">
+        <p class="blue-text">Username</p>
+        <input type="text" name="" value="" placeholder="username"
+         formControlName="username">
+         <span class="red-text"
+         *ngIf="registerForm.controls.username.errors && registerForm.controls.username.dirty">Este campo es requerido!</span>
+      </div>
+      <div class="col s12">
+        <p class="blue-text">Password</p>
+        <input type="password" name="" value="" placeholder="password"
+        formControlName="password">
+        <span class="red-text"
+        *ngIf="registerForm.controls.password.errors && registerForm.controls.password.dirty">Este campo es requerido!</span>
+      </div>
+      <div class="col s12 right-align">
+        <button type="submit" name="button" class="btn waves-effect waves-light"
+      [disabled]="!registerForm.valid">
+          Iniciar sesión
+        </button>
+      </div>
+    </div>
+    </form>
+  </div>
+</section>
