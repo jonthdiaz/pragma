@@ -24,8 +24,13 @@ var CommitsMainComponent = (function () {
             this._router.navigate(['/login']);
             this.is_loggedin = false;
         }
-        else if (LoggedIn == "true")
+        else if (LoggedIn == "true") {
             this.is_loggedin = true;
+        }
+        else {
+            this._router.navigate(['/login']);
+            this.is_loggedin = false;
+        }
     }
     CommitsMainComponent.prototype.ngOnInit = function () {
         this.listcommits = JSON.parse(localStorage.getItem("listcommits"));
