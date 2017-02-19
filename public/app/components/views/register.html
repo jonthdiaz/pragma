@@ -1,5 +1,5 @@
 <section class="container wm-t-50">
-  
+
   <button type="button" name="button" class="btn waves-effect waves-light"
   (click)=activeForm()>
     Nuevo usuario
@@ -48,7 +48,7 @@
       </div>
     </div>
   </form>
-  <section *ngIf="!showform">
+  <section *ngIf="listusers?.length > 0">
     <div class="row wm-t-30">
       <div class="col s4 wm-0">
         <span class="orange-text">Nombre</span>
