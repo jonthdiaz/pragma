@@ -23,6 +23,7 @@ submit(e){
   let password = localStorage.getItem('password')
   if(username == this.registerForm.value.username && password == this.registerForm.value.password){
     localStorage.setItem("LoggedIn", true)
+    $(".button-collapse").sideNav();
     this._router.navigate(['']);
   }else{
     let listusers = JSON.parse(localStorage.getItem("listusers"))
@@ -30,7 +31,9 @@ submit(e){
                                 && item.password==this.registerForm.value.password)
     if (user.length > 0){
       localStorage.setItem("LoggedIn", true)
+      $(".button-collapse").sideNav();
       this._router.navigate(['']);
+
     }
   }
   }

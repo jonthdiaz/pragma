@@ -15,6 +15,11 @@ var LoginComponent = (function () {
         localStorage.setItem('password', '123456');
         localStorage.setItem('LoggedIn', false);
     }
+    LoginComponent.prototype.ngOnInit = function () {
+        $(document).ready(function () {
+            $(".button-collapse").sideNav();
+        });
+    };
     return LoginComponent;
 }());
 LoginComponent = __decorate([

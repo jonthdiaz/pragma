@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 
 @Component({
@@ -8,7 +8,7 @@ import {Router} from '@angular/router';
   <register-main></register-main>
   `
 })
-export class RegisterComponent {
+export class RegisterComponent implements OnInit {
   is_loggedin: boolean = false;
   constructor(private _router: Router){
     let LoggedIn = localStorage.getItem("LoggedIn")
@@ -22,5 +22,10 @@ export class RegisterComponent {
       this._router.navigate(['/login']);
       this.is_loggedin = false
     }
+  }
+  ngOnInit(){
+    $(document).ready(()=>{
+     $(".button-collapse").sideNav();
+    })
   }
 }

@@ -18,6 +18,8 @@ var HeaderComponent = (function () {
         localStorage.setItem("LoggedIn", false);
         this._router.navigate(['login']);
     };
+    HeaderComponent.prototype.ngOnInit = function () {
+    };
     return HeaderComponent;
 }());
 __decorate([

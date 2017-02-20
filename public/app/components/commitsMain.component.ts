@@ -13,7 +13,8 @@ export class CommitsMainComponent  implements OnInit{
   is_loggedin: boolean = false;
   showform: boolean = false;
   InputSearch: string;
-  numberCommit: string = 0;
+  numberCommit: string = "0";
+  listcommits: any;
   constructor(private _router: Router,
               private formBuilder: FormBuilder){
     let LoggedIn = localStorage.getItem("LoggedIn")
@@ -33,10 +34,13 @@ export class CommitsMainComponent  implements OnInit{
      title: ['', Validators.required],
      detail: ['', Validators.required]
    });
+   $(document).ready(()=>{
+    $(".button-collapse").sideNav();
+   })
  }
  activeCommit(value:string){
    if(value == this.numberCommit){
-     this.numberCommit = 0
+     this.numberCommit = "0"
    }else{
       this.numberCommit = value
    }

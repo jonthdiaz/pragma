@@ -27,6 +27,11 @@ var RegisterComponent = (function () {
             this.is_loggedin = false;
         }
     }
+    RegisterComponent.prototype.ngOnInit = function () {
+        $(document).ready(function () {
+            $(".button-collapse").sideNav();
+        });
+    };
     return RegisterComponent;
 }());
 RegisterComponent = __decorate([

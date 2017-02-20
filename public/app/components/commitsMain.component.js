@@ -18,7 +18,7 @@ var CommitsMainComponent = (function () {
         this.formBuilder = formBuilder;
         this.is_loggedin = false;
         this.showform = false;
-        this.numberCommit = 0;
+        this.numberCommit = "0";
         var LoggedIn = localStorage.getItem("LoggedIn");
         if (LoggedIn == "false") {
             this._router.navigate(['/login']);
@@ -38,10 +38,13 @@ var CommitsMainComponent = (function () {
             title: ['', forms_1.Validators.required],
             detail: ['', forms_1.Validators.required]
         });
+        $(document).ready(function () {
+            $(".button-collapse").sideNav();
+        });
     };
     CommitsMainComponent.prototype.activeCommit = function (value) {
         if (value == this.numberCommit) {
-            this.numberCommit = 0;
+            this.numberCommit = "0";
         }
         else {
             this.numberCommit = value;

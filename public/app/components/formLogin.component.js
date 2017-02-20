@@ -29,6 +29,7 @@ var formLoginComponent = (function () {
         var password = localStorage.getItem('password');
         if (username == this.registerForm.value.username && password == this.registerForm.value.password) {
             localStorage.setItem("LoggedIn", true);
+            $(".button-collapse").sideNav();
             this._router.navigate(['']);
         }
         else {
@@ -37,6 +38,7 @@ var formLoginComponent = (function () {
                 && item.password == _this.registerForm.value.password; });
             if (user.length > 0) {
                 localStorage.setItem("LoggedIn", true);
+                $(".button-collapse").sideNav();
                 this._router.navigate(['']);
             }
         }

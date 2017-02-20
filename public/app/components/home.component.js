@@ -27,6 +27,9 @@ var HomeComponent = (function () {
             this.is_loggedin = false;
         }
     }
+    HomeComponent.prototype.ngOnInit = function () {
+        $(".button-collapse").sideNav();
+    };
     return HomeComponent;
 }());
 HomeComponent = __decorate([
